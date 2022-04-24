@@ -19,8 +19,6 @@ Button button_press(WIO_5S_PRESS);
 // Soil Moisture Sensor definitions
 int sensorPin = A0; //Define variable to store soil moisture sensor pin
 int sensorValue = 0; //Define variable to store soil moisture sensor value
-int waterThreshold = 20;
-#define SENSOR_MAX 1000
 
 void update()
 {
@@ -43,12 +41,12 @@ void update()
 
   // Setting soil moisture
   sensorValue = analogRead(sensorPin); // Store sensor values
-  // sensorValue = map(sensorValue,650,250,0,100); //Map sensor values
+  sensorValue = map(sensorValue,430,350,0,100); //Map sensor values
   tft.setTextSize(2);
   tft.drawString("Soil Moisture", 160, 65);
   tft.setTextSize(3);
   tft.drawNumber(sensorValue, 200, 95); // Display sensor values as percentage
-  // tft.drawString("%",260,95);
+  tft.drawString("%",260,95);
 
   // Setting light
   int light = analogRead(WIO_LIGHT); // Assign variable to store light sensor values
