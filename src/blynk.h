@@ -53,25 +53,4 @@ WidgetTerminal terminal(TERMINAL);
 
 #include "BlynkEdgent.h"
 
-void vWrite(int pin, BlynkParam &param);
-void blynk_writeConfig();
-
-enum pins
-{
-    TERMINAL = V0,
-    PIN_MOIST = V1,
-    PIN_HUM = V2,
-    PIN_TEMP = V3,
-    PIN_LIGHT = V4,
-    // add more Pins here
-    PIN_NUM // last item, number of pins
-};
-
-// digital pins
-// int pumpPin = 3;
-
-// Params for each pin are stored here and can be accessed via e.g.:
-// value = pinParams[pin].asInt();
-BlynkParamPlus pinParams[PIN_NUM];
-
 #endif #BLYNK_H
